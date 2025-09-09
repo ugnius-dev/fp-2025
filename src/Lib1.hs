@@ -7,7 +7,7 @@ data Dumpable = Examples
 
 -- This is a "root" ADT representing your grammar,
 -- Please expand this ADT as needed
-data Command = Dump Dumpable 
+data Command = Dump Dumpable
   deriving Show
 
 examples :: [Command]
