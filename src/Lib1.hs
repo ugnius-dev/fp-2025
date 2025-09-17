@@ -1,5 +1,5 @@
 module Lib1
-    ( examples, Command(..)
+    ( examples, Command(..), Dumpable(..)
     ) where
 
 data Dumpable = Examples
