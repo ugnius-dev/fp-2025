@@ -20,5 +20,5 @@ lib1Tests = testGroup "Lib1 tests"
 lib2Tests :: TestTree
 lib2Tests = testGroup "Lib2 tests" (
   map (\e -> testCase (show e ++ " is parsed") $
-    Lib2.parseCommand (Lib2.toCliCommand e) @?= Right e
+    Lib2.parseCommand (Lib2.toCliCommand e) @?= Right (e, "")
   ) Lib1.examples)

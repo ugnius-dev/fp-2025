@@ -28,7 +28,9 @@ cmd :: String -> Repl ()
 cmd str = do
   case Lib2.parseCommand str of
     Left e -> liftIO $ putStrLn $ "PARSE ERROR: " ++ e
-    Right c -> liftIO $ mapM_ putStrLn (Lib2.process c)
+    Right (c, "") -> liftIO $ mapM_ putStrLn (Lib2.process c)
+    Right (c, r) -> liftIO $ putStrLn $ "PARSED: " ++ show c ++
+        ", but remaining input IS NOT fully consumed: " ++ r
 
 main :: IO ()
 main =
